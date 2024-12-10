@@ -7,7 +7,7 @@ const config: CapacitorConfig = {
   plugins: {
     LiveUpdates: {
       appId: '7a19e700',
-      channel: 'a-vn2-sprvn201-website',
+      channel: 'Production',
       autoUpdateMethod: 'background',
       maxVersions: 2
     }
