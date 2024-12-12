@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { PhotoService } from '../services/photo.service';
 import { ActionSheetController } from '@ionic/angular';
 import { UserPhoto } from '../services/UserPhoto';
-
+import Echo from '../echo-plugins';
 
 @Component({
   selector: 'app-tab2',
@@ -14,6 +14,8 @@ export class Tab2Page {
 
   async ngOnInit() {
     await this.photoService.loadSaved();
+    const { value } = await Echo.echo({ value: 'Hello World!' });
+    console.log('Response from native:', value);
   }
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
